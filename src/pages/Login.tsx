@@ -2,8 +2,7 @@ import LoginForm from "../components/LoginForm";
 
 function Login() {
   return (
-    <div>
-      <h2 className="text-xl">Hola,Bienvenido al ingreso</h2>
+    <div className="flex justify-center items-center h-screen">
       <LoginForm />
     </div>
   );
