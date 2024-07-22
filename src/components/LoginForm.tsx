@@ -9,19 +9,12 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-export default function Component() {
+export default function LoginForm() {
   return (
     <Card className="mx-auto max-w-lg justify-center border-0">
       <CardHeader className="space-y-1">
-        <img
-          src="vite.svg"
-          width={80}
-          height={70}
-          className="m-auto"
-          alt=""
-        />
         <CardTitle className="text-2xl font-bold">
-          Hola, bienvenido al registro
+          Hola, bienvenido al ingreso
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -46,15 +39,15 @@ export default function Component() {
           </div>
           <Button
             type="submit"
-            className="w-full bg-redp text-white rounded-full flex justify-center hover:bg-red-500"
+            className="w-full bg-redp text-white rounded-md flex justify-center hover:bg-red-500"
           >
             Ingresar
           </Button>
         </form>
-        <CardFooter>
+        <CardFooter className="text-sm">
           ¿Aún no tienes una cuenta?{" "}
           <a
-            href="#"
+            href="register"
             className="text-red-700 border-b hover:border-b-red-700
             pl-2"
           >
