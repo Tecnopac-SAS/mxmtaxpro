@@ -8,6 +8,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { NavLink } from "react-router-dom";
 
 export default function LoginForm() {
   return (
@@ -41,7 +42,7 @@ export default function LoginForm() {
             type="submit"
             className="w-full bg-redp text-white rounded-md flex justify-center hover:bg-red-500"
           >
-            Ingresar
+            <NavLink to="/code">Ingresar</NavLink>
           </Button>
         </form>
         <CardFooter className="text-sm">

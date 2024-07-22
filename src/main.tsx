@@ -9,6 +9,7 @@ import Register from "./pages/Register.tsx";
 import Code from "./components/CodeForm.tsx";
 import FiscalYear from "./pages/FiscalYear.tsx";
 import DashboardLayout from "./layouts/DashboardLayout.tsx";
+import Account from "./pages/Account.tsx";
 
 const router = createBrowserRouter([
   {
@@ -59,11 +60,15 @@ const router = createBrowserRouter([
       },
       {
         path: "2023",
-        element: "2024",
+        element: "2023",
       },
       {
         path: "2024",
         element: "2024",
+      },
+      {
+        path: "account",
+        element: <Account />,
       },
     ],
   },

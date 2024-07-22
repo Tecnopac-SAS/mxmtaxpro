@@ -47,7 +47,7 @@ export default function SideBar() {
       <div className="w-full mb-8">
         <NavLink
           className="flex items-center"
-          to="/account"
+          to="account"
         >
           <img
             src="/icons/account.svg"
@@ -57,10 +57,16 @@ export default function SideBar() {
         </NavLink>
       </div>
       <div className="mt-auto">
-        <div className="flex items-center justify-center space-x-2">
+        <NavLink
+          to="/"
+          className="flex items-center justify-center space-x-2"
+        >
           <h2 className="text-lg font-bold text-red-600">Salir</h2>
-          <img className="w-5 h-5 text-red-600" />
-        </div>
+          <img
+            src="/icons/logout.svg"
+            className="w-5 h-5 text-red-600"
+          />
+        </NavLink>
       </div>
     </div>
   );

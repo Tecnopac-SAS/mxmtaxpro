@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/input-otp";
 import { toast } from "@/components/ui/use-toast";
 import { Card, CardFooter } from "./ui/card";
+import { NavLink } from "react-router-dom";
 
 const FormSchema = z.object({
   pin: z.string().min(4, {
@@ -89,7 +90,7 @@ export default function Code() {
             type="submit"
             className="w-full bg-redp text-white rounded-full flex justify-center hover:bg-red-500"
           >
-            Continuar
+            <NavLink to="/dashboard">Continuar</NavLink>
           </Button>
         </form>
       </Form>
