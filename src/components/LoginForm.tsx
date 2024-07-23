@@ -9,19 +9,26 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 
-export default function LoginForm() {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+type FormValues = {
+  name: string;
+  phone: string;
+};
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(name);
-    console.log(phone);
+export default function LoginForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
+
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    console.log(data);
+
     try {
-      const response = await axios.post("/api/login", { name, phone });
+      const response = await axios.post("/api/login", data);
       console.log(response.data);
       // handle successful login
     } catch (error) {
@@ -40,35 +47,37 @@ export default function LoginForm() {
       <CardContent>
         <form
           className="space-y-4"
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
         >
           <div className="space-y-2">
-            <Label htmlFor="email">Nombre</Label>
+            <Label htmlFor="name">Nombre</Label>
             <Input
               id="name"
               type="text"
               placeholder="Usuario"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              {...register("name", { required: "Este campo es obligatorio" })}
             />
+            {errors.name && (
+              <span className="text-red-600">{errors.name.message}</span>
+            )}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password">Teléfono</Label>
+            <Label htmlFor="phone">Teléfono</Label>
             <Input
               id="phone"
               type="number"
               placeholder="Ingrese Número"
-              required
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              {...register("phone", { required: "Este campo es obligatorio" })}
             />
+            {errors.phone && (
+              <span className="text-red-600">{errors.phone.message}</span>
+            )}
           </div>
           <Button
             type="submit"
             className="w-full bg-red-500 text-white rounded-md flex justify-center hover:bg-red-700"
           >
-            <NavLink to="/code">Ingresar</NavLink>
+            Ingresar
           </Button>
         </form>
       </CardContent>
