@@ -92,6 +92,7 @@ export default function RegisterForm() {
               id="id"
               type="number"
               placeholder="Usuario"
+              min={0}
               {...register("id", { required: "Este campo es obligatorio" })}
             />
             {errors.id && (
