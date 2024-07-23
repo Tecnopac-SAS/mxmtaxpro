@@ -12,9 +12,9 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 
 type FormValues = {
-  nombre: string;
+  name: string;
   email: string;
-  tel: string;
+  phone: string;
   id: string;
 };
 
@@ -53,13 +53,13 @@ export default function RegisterForm() {
           <div className="space-y-2">
             <Label htmlFor="nombre">Nombre</Label>
             <Input
-              id="nombre"
+              id="name"
               type="text"
               placeholder="Usuario"
-              {...register("nombre", { required: "Este campo es obligatorio" })}
+              {...register("name", { required: "Este campo es obligatorio" })}
             />
-            {errors.nombre && (
-              <span className="text-red-600">{errors.nombre.message}</span>
+            {errors.name && (
+              <span className="text-red-600">{errors.name.message}</span>
             )}
           </div>
           <div className="space-y-2">
@@ -75,15 +75,15 @@ export default function RegisterForm() {
             )}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="tel">Número de teléfono</Label>
+            <Label htmlFor="phone">Número de teléfono</Label>
             <Input
               id="tel"
               type="number"
               placeholder="Ingrese número"
-              {...register("tel", { required: "Este campo es obligatorio" })}
+              {...register("phone", { required: "Este campo es obligatorio" })}
             />
-            {errors.tel && (
-              <span className="text-red-600">{errors.tel.message}</span>
+            {errors.phone && (
+              <span className="text-red-600">{errors.phone.message}</span>
             )}
           </div>
           <div className="space-y-2">
