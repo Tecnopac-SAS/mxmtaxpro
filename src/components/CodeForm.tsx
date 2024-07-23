@@ -23,6 +23,7 @@ import {
 import { toast } from "@/components/ui/use-toast";
 import { Card, CardFooter } from "./ui/card";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 const FormSchema = z.object({
   pin: z.string().min(4, {
@@ -38,8 +39,10 @@ export default function Code() {
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
     console.log(data);
+    const response = await axios.post("/api/code", data);
+    console.log(response.data);
     toast({
       title: "You submitted the following values:",
       description: (
