@@ -39,6 +39,7 @@ export default function Code() {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
+    console.log(data);
     toast({
       title: "You submitted the following values:",
       description: (
@@ -90,7 +91,7 @@ export default function Code() {
             type="submit"
             className="w-full bg-redp text-white rounded-full flex justify-center hover:bg-red-500"
           >
-            <NavLink to="/dashboard">Continuar</NavLink>
+            <NavLink to="/client">Continuar</NavLink>
           </Button>
         </form>
       </Form>

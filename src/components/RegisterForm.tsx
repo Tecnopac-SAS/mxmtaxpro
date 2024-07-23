@@ -21,7 +21,7 @@ export default function RegisterForm() {
       <CardContent>
         <form className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Nombre</Label>
+            <Label htmlFor="nombre">Nombre</Label>
             <Input
               id="nombre"
               type="text"
@@ -32,14 +32,14 @@ export default function RegisterForm() {
           <div className="space-y-2">
             <Label htmlFor="email">Correo electronico</Label>
             <Input
-              id="nombre"
-              type="text"
+              id="email"
+              type="email"
               placeholder="ejemplo@correo.com"
               required
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password">Numero de teléfono</Label>
+            <Label htmlFor="tel">Numero de teléfono</Label>
             <Input
               id="tel"
               type="number"
@@ -64,7 +64,7 @@ export default function RegisterForm() {
           </Button>
         </form>
         <CardFooter className="text-sm flex justify-center">
-          ¿Ya tienes una cuenta?{" "}
+          ¿Ya tienes una cuenta?
           <a
             href="login"
             className="text-red-700 border-b hover:border-b-red-700

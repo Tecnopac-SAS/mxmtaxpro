@@ -5,11 +5,11 @@ import "./globals.css";
 import Login from "./pages/Login.tsx";
 import Home from "./pages/Home.tsx";
 import RootLayout from "./layouts/RootLayout.tsx";
-import Register from "./pages/Register.tsx";
-import Code from "./components/CodeForm.tsx";
-import FiscalYear from "./pages/FiscalYear.tsx";
-import DashboardLayout from "./layouts/DashboardLayout.tsx";
-import Account from "./pages/Account.tsx";
+import RegisterPage from "./pages/Register.tsx";
+import CodePage from "./components/CodeForm.tsx";
+import FiscalYearPage from "./pages/FiscalYear.tsx";
+import AccountPage from "./pages/Account.tsx";
+import ClientLayout from "./layouts/ClientLayout.tsx";
 
 const router = createBrowserRouter([
   {
@@ -25,50 +25,30 @@ const router = createBrowserRouter([
       },
       {
         path: "register",
-        element: <Register />,
+        element: <RegisterPage />,
       },
       {
         path: "code",
-        element: <Code />,
+        element: <CodePage />,
       },
       {
         path: "fiscal-year",
-        element: <FiscalYear />,
+        element: <FiscalYearPage />,
       },
     ],
   },
-
+  //client
   {
-    element: <DashboardLayout />,
-    path: "/dashboard",
+    path: "/client",
+    element: <ClientLayout />,
     children: [
       {
-        path: "2019",
-        element: "2019",
-      },
-      {
-        path: "2020",
-        element: "2020",
-      },
-      {
-        path: "2021",
-        element: "2021",
-      },
-      {
-        path: "2022",
-        element: "2022",
-      },
-      {
-        path: "2023",
-        element: "2023",
-      },
-      {
-        path: "2024",
-        element: "2024",
+        path: "fiscal-year/:year",
+        element: <FiscalYearPage />,
       },
       {
         path: "account",
-        element: <Account />,
+        element: <AccountPage />,
       },
     ],
   },
