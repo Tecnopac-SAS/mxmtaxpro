@@ -43,8 +43,8 @@ const router = createBrowserRouter([
     element: <ClientLayout />,
     children: [
       {
-        path: "fiscal-year/:year",
-        element: <FiscalYearPage />,
+        path: "2019",
+        element: "year",
       },
       {
         path: "account",
