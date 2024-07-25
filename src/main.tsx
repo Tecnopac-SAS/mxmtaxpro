@@ -10,6 +10,7 @@ import CodePage from "./components/CodeForm.tsx";
 import FiscalYearPage from "./pages/FiscalYear.tsx";
 import AccountPage from "./pages/Account.tsx";
 import ClientLayout from "./layouts/ClientLayout.tsx";
+import YearlyDataTable from "./components/YearData/YearData.tsx";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "2019",
-        element: "year",
+        element: <YearlyDataTable />,
       },
       {
         path: "account",
