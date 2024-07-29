@@ -11,12 +11,12 @@ import FiscalYearPage from "./pages/FiscalYear.tsx";
 import AccountPage from "./pages/Account.tsx";
 import ClientLayout from "./layouts/ClientLayout.tsx";
 import YearlyDataTable from "./components/YearData/YearData.tsx";
-
-// Import the new form components
 import MultistepForm from "./components/MultistepForm.tsx";
-import { PersonalInfo } from "./components/FormSteps/PersonalInfo.tsx";
-import { Employment } from "./components/FormSteps/Employment.tsx";
+import { YearInfo } from "./components/FormSteps/YearInfo.tsx";
+import { Name } from "./components/FormSteps/Name.tsx";
 import { Review } from "./components/FormSteps/Review.tsx";
+import { Conyugue } from "./components/FormSteps/Conyugue.tsx";
+import { Address } from "./components/FormSteps/Address.tsx";
 
 const router = createBrowserRouter([
   {
@@ -64,8 +64,10 @@ const router = createBrowserRouter([
     path: "multistep-form",
     element: <MultistepForm />,
     children: [
-      { path: "", element: <PersonalInfo /> },
-      { path: "employment", element: <Employment /> },
+      { path: "", element: <YearInfo /> },
+      { path: "name", element: <Name /> },
+      { path: "conyugue", element: <Conyugue /> },
+      { path: "address", element: <Address /> },
       { path: "review", element: <Review /> },
     ],
   },

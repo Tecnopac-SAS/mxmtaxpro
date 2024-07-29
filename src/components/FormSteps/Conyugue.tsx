@@ -1,0 +1,91 @@
+// src/components/FormSteps/Name.tsx
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom"; // Change this line
+import { useFormContext } from "../../context/FormContext";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
+
+interface ConyugueData {
+  spouseFirstName: string;
+  spouseSecondName: string;
+  spouseLastName: string;
+  spouseDOB: string;
+  spouseSSN: string;
+}
+
+export const Conyugue: React.FC = () => {
+  const { register, handleSubmit } = useForm<ConyugueData>();
+  const { updateFormData } = useFormContext();
+  const navigate = useNavigate(); // Change this line
+
+  const onSubmit = (data: ConyugueData) => {
+    updateFormData(data);
+    navigate("/multistep-form/review");
+  };
+  const onBack = () => {
+    navigate(-1);
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <h2 className=" border-b border-black">Conyugue</h2>
+
+        <label htmlFor="spouseFirstName">Primer Nombre</label>
+        <Input
+          className="max-w-56"
+          required
+          {...register("spouseFirstName")}
+          id="spouseFirstName"
+        />
+      </div>
+      <div>
+        <label htmlFor="spouseSecondName">Segundo Nombre</label>
+        <Input
+          className="max-w-56"
+          required
+          {...register("spouseSecondName")}
+          id="spouseSecondName"
+        />
+      </div>
+      <div>
+        <label htmlFor="spouseLastname">Apellidos</label>
+        <Input
+          className="max-w-56"
+          required
+          {...register("spouseLastName")}
+          id="spouse-lastname"
+        />
+      </div>
+      <div>
+        <label htmlFor="spouseDOB">DOB</label>
+        <Input
+          type="date"
+          className="max-w-56"
+          required
+          {...register("spouseDOB")}
+          id="spouseDob"
+        />
+      </div>
+      <div>
+        <label htmlFor="spouseSSN">
+          SSN <span className="tex-sm">(9 dígitos)</span>
+        </label>
+        <Input
+          className="max-w-56"
+          required
+          {...register("spouseSSN")}
+          id="spouseSSN"
+        />
+      </div>
+      <Button
+        type="button"
+        onClick={onBack}
+      >
+        Back
+      </Button>
+      <Button type="submit">Next</Button>
+    </form>
+  );
+};
