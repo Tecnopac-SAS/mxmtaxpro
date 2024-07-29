@@ -12,6 +12,12 @@ import AccountPage from "./pages/Account.tsx";
 import ClientLayout from "./layouts/ClientLayout.tsx";
 import YearlyDataTable from "./components/YearData/YearData.tsx";
 
+// Import the new form components
+import MultistepForm from "./components/MultistepForm.tsx";
+import { PersonalInfo } from "./components/FormSteps/PersonalInfo.tsx";
+import { Employment } from "./components/FormSteps/Employment.tsx";
+import { Review } from "./components/FormSteps/Review.tsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,6 +57,16 @@ const router = createBrowserRouter([
         path: "account",
         element: <AccountPage />,
       },
+    ],
+  },
+  // New multistep form routes
+  {
+    path: "multistep-form",
+    element: <MultistepForm />,
+    children: [
+      { path: "", element: <PersonalInfo /> },
+      { path: "employment", element: <Employment /> },
+      { path: "review", element: <Review /> },
     ],
   },
 ]);
