@@ -106,7 +106,7 @@ export function DataTable() {
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4">
+      <div className="flex items-center py-4 w-11/12">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button

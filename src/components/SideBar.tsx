@@ -7,7 +7,7 @@ import {
 import { NavLink } from "react-router-dom";
 export default function SideBar() {
   return (
-    <aside className="flex flex-col items-center w-64 p-4 bg-[#FAF7F7] h-screen min-w-64">
+    <div className="flex flex-col items-center w-64 p-4 bg-[#FAF7F7] h-screen min-w-30 ">
       <div className="mb-8">
         <img
           src="logo.svg"
@@ -66,6 +66,6 @@ export default function SideBar() {
           />
         </NavLink>
       </div>
-    </aside>
+    </div>
   );
 }

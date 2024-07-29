@@ -71,7 +71,7 @@ function Account() {
 
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between w-11/12">
         {" "}
         <Button
           type="button"
@@ -85,7 +85,7 @@ function Account() {
           alt=""
         />
       </div>
-      <h2 className="border border-b-black mt-20">Gestión de cuenta</h2>
+      <h2 className="border border-b-black mt-20 w-11/12">Gestión de cuenta</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="space-y-2">
           <Label htmlFor="name">Nombre</Label>
