@@ -3,11 +3,11 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useFormContext } from "../../context/FormContext";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import Butons from "../Butons";
 
 interface AddressData {
   address: string;
-  apt: string;
+  apt?: string;
   state: string;
   city: string;
   zipCode: string;
@@ -20,7 +20,7 @@ export const Address: React.FC = () => {
 
   const onSubmit = (data: AddressData) => {
     updateFormData(data);
-    navigate("/multistep-form/review");
+    navigate("/multistep-form/contact");
   };
 
   return (
@@ -39,7 +39,6 @@ export const Address: React.FC = () => {
         <Input
           {...register("apt")}
           id="apt"
-          required
         />
       </div>
       <div className="max-w-56">
@@ -88,7 +87,7 @@ export const Address: React.FC = () => {
         />
       </div>
 
-      <Button type="submit">Next</Button>
+      <Butons />
     </form>
   );
 };

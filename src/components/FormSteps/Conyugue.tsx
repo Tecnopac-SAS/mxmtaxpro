@@ -1,10 +1,10 @@
 // src/components/FormSteps/Name.tsx
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom"; // Change this line
+import { useNavigate } from "react-router-dom";
 import { useFormContext } from "../../context/FormContext";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import Butons from "../Butons";
 
 interface ConyugueData {
   spouseFirstName: string;
@@ -17,18 +17,18 @@ interface ConyugueData {
 export const Conyugue: React.FC = () => {
   const { register, handleSubmit } = useForm<ConyugueData>();
   const { updateFormData } = useFormContext();
-  const navigate = useNavigate(); // Change this line
+  const navigate = useNavigate();
 
   const onSubmit = (data: ConyugueData) => {
     updateFormData(data);
-    navigate("/multistep-form/review");
-  };
-  const onBack = () => {
-    navigate(-1);
+    navigate("/multistep-form/address");
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="mt-20"
+    >
       <div>
         <h2 className=" border-b border-black">Conyugue</h2>
 
@@ -79,13 +79,7 @@ export const Conyugue: React.FC = () => {
           id="spouseSSN"
         />
       </div>
-      <Button
-        type="button"
-        onClick={onBack}
-      >
-        Back
-      </Button>
-      <Button type="submit">Next</Button>
+      <Butons />
     </form>
   );
 };

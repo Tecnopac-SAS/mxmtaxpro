@@ -3,15 +3,15 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useFormContext } from "../../context/FormContext";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import Butons from "../Butons";
 
 interface AddressData {
-  phone1: string;
-  phone2: string;
+  phone1: string | number | undefined;
+  phone2: string | number | undefined;
   email: string;
 }
 
-export const Address: React.FC = () => {
+export const Contact: React.FC = () => {
   const { register, handleSubmit } = useForm<AddressData>();
   const { updateFormData } = useFormContext();
   const navigate = useNavigate();
@@ -24,24 +24,25 @@ export const Address: React.FC = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h2 className=" border-b border-black">Contacto</h2>
-      <div className="max-w-56">
-        <label htmlFor="phone1">Dirección</label>
+      <div className="max-w-56 m-auto">
+        <label htmlFor="phone1">Numero Telefono 1</label>
         <Input
           {...register("phone1")}
           id="phone1"
+          type="number"
           required
         />
       </div>
-      <div className="max-w-56">
-        <label htmlFor="phone2">Apto</label>
+      <div className="max-w-56  m-auto">
+        <label htmlFor="phone2">Numero Telefono 1</label>
         <Input
+          type="number"
           {...register("phone2")}
           id="phone2"
-          required
         />
       </div>
-      <div className="max-w-56">
-        <label htmlFor="date">Zip code</label>
+      <div className="max-w-56 m-auto pb-40">
+        <label htmlFor="date">Correo electronico</label>
         <Input
           type="email"
           {...register("email")}
@@ -49,8 +50,7 @@ export const Address: React.FC = () => {
           required
         />
       </div>
-
-      <Button type="submit">Next</Button>
+      <Butons />
     </form>
   );
 };

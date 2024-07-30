@@ -13,7 +13,6 @@ const YearlyDataTable = () => {
   return (
     <div>
       <div className="flex justify-between w-11/12">
-        {" "}
         <Button
           type="button"
           onClick={handleBack}

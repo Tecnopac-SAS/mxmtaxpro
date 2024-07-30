@@ -1,9 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { useFormContext } from "../../context/FormContext";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
+import Butons from "../Butons";
 
 interface YearInfoData {
   date: string;
@@ -14,7 +14,6 @@ export const YearInfo: React.FC = () => {
   const { register, handleSubmit } = useForm<YearInfoData>();
   const { updateFormData } = useFormContext();
   const navigate = useNavigate();
-
   const onSubmit = (data: YearInfoData) => {
     updateFormData(data);
     navigate("/multistep-form/name");
@@ -23,8 +22,10 @@ export const YearInfo: React.FC = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h2 className=" border-b border-black">Fecha y año</h2>
-      <div className="max-w-56">
-        <label htmlFor="date">Fecha</label>
+      <div className="max-w-56 m-auto py-10">
+        <label htmlFor="date">
+          <strong>Fecha</strong>
+        </label>
         <Input
           type="date"
           {...register("date")}
@@ -32,8 +33,10 @@ export const YearInfo: React.FC = () => {
           required
         />
       </div>
-      <div className="max-w-56">
-        <label htmlFor="year">Año fiscal a declarar</label>
+      <div className="max-w-56 m-auto pb-40">
+        <label htmlFor="year">
+          <strong>Año fiscal a declarar</strong>
+        </label>
         <select
           className="w-full"
           {...register("year")}
@@ -55,7 +58,7 @@ export const YearInfo: React.FC = () => {
         </select>
       </div>
 
-      <Button type="submit">Next</Button>
+      <Butons />
     </form>
   );
 };
