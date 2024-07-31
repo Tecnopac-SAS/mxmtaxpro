@@ -7,8 +7,8 @@ import { DialogClose } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 interface DependentData {
-  DependentFullName: string;
-  DependentBirthday: string;
+  dependentFullName: string;
+  dependentBirthday: string;
   socialSecurity: string;
   relationship: string;
   months: string;
@@ -40,7 +40,7 @@ function DependentForm() {
             type="text"
             id="fullName"
             placeholder="Escribe aquí..."
-            {...register("DependentFullName")}
+            {...register("dependentFullName")}
           />
         </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
@@ -48,30 +48,33 @@ function DependentForm() {
           <Input
             type="date"
             id="birthday"
+            {...register("dependentBirthday")}
           />
         </div>
       </div>
       <div className="max-w-xl gap-10 flex">
         <div className="grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor="fullName">Seguro Social</Label>
+          <Label htmlFor="socialSecurity">Seguro Social</Label>
           <Input
             type="text"
             id="SocialSecurity"
             placeholder="Escribe aquí..."
+            {...register("socialSecurity")}
           />
         </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor="fullName">Parentesco</Label>
+          <Label htmlFor="relationship">Parentesco</Label>
           <Input
             type="text"
             id="relationship"
             placeholder="Escribe aquí..."
+            {...register("relationship")}
           />
         </div>
       </div>
       <div className="max-w-xl gap-10 flex">
         <div className=" w-full max-w-sm items-center">
-          <Label htmlFor="fullName">
+          <Label htmlFor="months">
             Número de meses que vivió con usted (Max. 12)
           </Label>
           <Input
@@ -79,6 +82,7 @@ function DependentForm() {
             id="months"
             placeholder="Escribe aquí..."
             min={1}
+            {...register("months")}
           />
         </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
@@ -86,6 +90,7 @@ function DependentForm() {
           <RadioGroup
             defaultValue="option-one"
             id="childCare"
+            {...register("childCare")}
           >
             <div className=" space-x-2">
               <RadioGroupItem
@@ -95,7 +100,10 @@ function DependentForm() {
               <Label htmlFor="option-one">Si</Label>
               <div className="">
                 <Label htmlFor="supportDocument">Anexe documento soporte</Label>
-                <Input type="file" />
+                <Input
+                  type="file"
+                  {...register("supportDocument")}
+                />
               </div>
             </div>
             <div className="flex items-center space-x-2">

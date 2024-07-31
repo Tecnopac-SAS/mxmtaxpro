@@ -19,6 +19,7 @@ import { Conyugue } from "./components/FormSteps/Conyugue.tsx";
 import { Address } from "./components/FormSteps/Address.tsx";
 import { Contact } from "./components/FormSteps/Contact.tsx";
 import { Dependents } from "./components/FormSteps/Dependents.tsx";
+import Question1 from "./components/FormSteps/Question1.tsx";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,7 @@ const router = createBrowserRouter([
       { path: "address", element: <Address /> },
       { path: "contact", element: <Contact /> },
       { path: "dependents", element: <Dependents /> },
+      { path: "question1", element: <Question1 /> },
 
       { path: "review", element: <Review /> },
     ],

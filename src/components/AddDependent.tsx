@@ -25,7 +25,9 @@ function AddDependent() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[]">
         <DialogHeader>
-          <DialogTitle>Llene la siguiente información</DialogTitle>
+          <DialogTitle className="border-black border-b">
+            Llene la siguiente información
+          </DialogTitle>
         </DialogHeader>
         <DependentForm />
       </DialogContent>

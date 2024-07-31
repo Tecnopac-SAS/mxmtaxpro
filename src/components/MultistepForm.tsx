@@ -33,12 +33,26 @@ const MultistepForm: React.FC = () => {
   return (
     <>
       <FormHeader />
+      <div className="flex pt-2">
+        <a
+          href="/client"
+          className="flex items-center gap-2 md:pl-20 text-lg font-semibold max-w-[10%]"
+        >
+          <img
+            src="/icons/back.svg"
+            alt="back"
+            height={10}
+            width={10}
+          />{" "}
+          Cancelar
+        </a>
+        <Progress
+          value={getProgressValue()}
+          className="max-w-[20%]  m-auto "
+        />
+      </div>
       <FormProvider>
-        <div className="max-w-[80%] m-auto pt-10">
-          <Progress
-            value={getProgressValue()}
-            className="max-w-[50%]  m-auto "
-          />
+        <div className="max-w-[90%] m-auto pt-10">
           <Outlet />
         </div>
       </FormProvider>
