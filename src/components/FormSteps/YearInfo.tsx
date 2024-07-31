@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useFormContext } from "../../context/FormContext";
 import { Input } from "../ui/input";
 import { useNavigate } from "react-router-dom";
-import Butons from "../Butons";
+import Buttons from "../Buttons";
 
 interface YearInfoData {
   date: string;
@@ -58,7 +58,7 @@ export const YearInfo: React.FC = () => {
         </select>
       </div>
 
-      <Butons />
+      <Buttons />
     </form>
   );
 };

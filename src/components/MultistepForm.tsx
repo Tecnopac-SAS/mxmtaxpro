@@ -15,6 +15,14 @@ const MultistepForm: React.FC = () => {
         return 10;
       case "/multistep-form/conyugue":
         return 20;
+      case "/multistep-form/addres":
+        return 30;
+      case "/multistep-form/contact":
+        return 40;
+      case "/multistep-form/dependents":
+        return 60;
+      case "/multistep-form/question1":
+        return 10;
       case "/multistep-form/review":
         return 100;
       default:

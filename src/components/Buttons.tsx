@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 
-function Butons() {
+function Buttons() {
   const navigate = useNavigate();
   const onBack = () => {
     navigate(-1);
@@ -23,4 +23,4 @@ function Butons() {
     </div>
   );
 }
-export default Butons;
+export default Buttons;

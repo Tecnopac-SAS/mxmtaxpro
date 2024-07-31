@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useFormContext } from "../../context/FormContext";
 import { Input } from "../ui/input";
-import Butons from "../Butons";
+import Buttons from "../Buttons";
 
 interface AddressData {
   phone1: string | number | undefined;
@@ -50,7 +50,7 @@ export const Contact: React.FC = () => {
           required
         />
       </div>
-      <Butons />
+      <Buttons />
     </form>
   );
 };

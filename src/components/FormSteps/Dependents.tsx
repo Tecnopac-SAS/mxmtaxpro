@@ -1,72 +1,38 @@
 import React from "react";
-import Butons from "../Butons";
 import { DependantTable } from "../DependantTable";
-
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import AddDependent from "../AddDependent";
+import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const Dependents: React.FC = () => {
+  const onSubmit = () => {
+    navigate("question1");
+  };
+  const navigate = useNavigate();
+  const onBack = () => {
+    navigate(-1);
+  };
   return (
     <>
       <h2 className=" border-b border-black font-bold">Dependientes</h2>
       <div>
         <DependantTable />
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline">Edit Profile</Button>
-          </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
-              <DialogTitle>Edit profile</DialogTitle>
-              <DialogDescription>
-                Make changes to your profile here. Click save when you're done.
-              </DialogDescription>
-            </DialogHeader>
-            <div className="grid gap-4 py-4">
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label
-                  htmlFor="name"
-                  className="text-right"
-                >
-                  Name
-                </Label>
-                <Input
-                  id="name"
-                  value="Pedro Duarte"
-                  className="col-span-3"
-                />
-              </div>
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label
-                  htmlFor="username"
-                  className="text-right"
-                >
-                  Username
-                </Label>
-                <Input
-                  id="username"
-                  value="@peduarte"
-                  className="col-span-3"
-                />
-              </div>
-            </div>
-            <DialogFooter>
-              <Button type="submit">Save changes</Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
+        <AddDependent />
       </div>
-      <Butons />
+      <div className="flex justify-end border-t gap-7 border-gray-500 my-auto pt-5">
+        <Button
+          type="button"
+          onClick={onBack}
+        >
+          Volver
+        </Button>
+        <Button
+          className="bg-redp hover:bg-redp w-40"
+          onClick={onSubmit}
+        >
+          Siguiente
+        </Button>
+      </div>
     </>
   );
 };

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useFormContext } from "../../context/FormContext";
 import { Input } from "../ui/input";
-import Butons from "../Butons";
+import Buttons from "../Buttons";
 
 interface AddressData {
   address: string;
@@ -88,7 +88,7 @@ export const Address: React.FC = () => {
           />
         </div>
       </div>
-      <Butons />
+      <Buttons />
     </form>
   );
 };

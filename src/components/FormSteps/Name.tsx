@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom"; // Change this line
 import { useFormContext } from "../../context/FormContext";
 import { Input } from "../ui/input";
-import Butons from "../Butons";
+import Buttons from "../Buttons";
 
 interface NameData {
   firstName: string;
@@ -77,7 +77,7 @@ export const Name: React.FC = () => {
           />
         </div>{" "}
       </div>
-      <Butons />
+      <Buttons />
     </form>
   );
 };

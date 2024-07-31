@@ -55,7 +55,6 @@ export const columns: ColumnDef[] = [
     accessorKey: "childCare",
     header: "Cuidado y Gastos de los Niños",
   },
-
   {
     id: "actions",
     header: "",
