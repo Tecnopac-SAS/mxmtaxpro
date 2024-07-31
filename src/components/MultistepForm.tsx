@@ -26,8 +26,11 @@ const MultistepForm: React.FC = () => {
     <>
       <FormHeader />
       <FormProvider>
-        <div className="max-w-96 m-auto pt-10">
-          <Progress value={getProgressValue()} />
+        <div className="max-w-[80%] m-auto pt-10">
+          <Progress
+            value={getProgressValue()}
+            className="max-w-[50%]  m-auto "
+          />
           <Outlet />
         </div>
       </FormProvider>

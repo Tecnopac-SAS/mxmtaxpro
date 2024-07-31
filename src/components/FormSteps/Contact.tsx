@@ -18,13 +18,13 @@ export const Contact: React.FC = () => {
 
   const onSubmit = (data: AddressData) => {
     updateFormData(data);
-    navigate("/multistep-form/review");
+    navigate("/multistep-form/dependents");
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h2 className=" border-b border-black">Contacto</h2>
-      <div className="max-w-56 m-auto">
+      <div className="max-w-56 m-auto pt-10">
         <label htmlFor="phone1">Numero Telefono 1</label>
         <Input
           {...register("phone1")}

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { CaretSortIcon, ChevronDownIcon } from "@radix-ui/react-icons";
+import { ChevronDownIcon } from "@radix-ui/react-icons";
 import {
   ColumnDef,
   SortingState,
@@ -12,7 +12,6 @@ import {
 } from "@tanstack/react-table";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   Table,
   TableBody,
@@ -41,7 +40,7 @@ const data = [
     fechaCreacion: "Text",
     title1: "Text",
     title2: "Text",
-    estado: "aprovado",
+    estado: "aprobado",
   },
   {
     nombre: "Form_doc",
@@ -80,12 +79,14 @@ export const columns: ColumnDef[] = [
     id: "acciones",
     header: "Acción",
     cell: () => (
-      <Button
-        variant="outline"
-        size="sm"
-      >
-        Ver
-      </Button>
+      <a href="/multistep-form/">
+        <Button
+          variant="outline"
+          size="sm"
+        >
+          Ver
+        </Button>
+      </a>
     ),
   },
 ];
@@ -143,7 +144,10 @@ export function DataTable() {
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id}>
+                  <TableHead
+                    key={header.id}
+                    className="font-bold text-black"
+                  >
                     {header.isPlaceholder
                       ? null
                       : flexRender(

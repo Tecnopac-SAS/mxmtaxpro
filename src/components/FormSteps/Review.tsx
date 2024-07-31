@@ -13,6 +13,7 @@ export const Review = () => {
     // Here you would typically submit the form data to your backend
     console.log("Form submitted:", formData);
     alert("submited");
+    navigate("/client");
     // After submission, you might want to navigate to a success page
     // navigate("/submission-success");
   };
@@ -20,8 +21,21 @@ export const Review = () => {
     <div>
       <h2>Review</h2>
       <pre>{JSON.stringify(formData, null, 2)}</pre>
-      <Button onClick={onBack}>Back</Button>
-      <Button onClick={onSubmit}>Submit</Button>
+      <div className="flex justify-end border-t gap-7 border-gray-500 my-auto pt-5">
+        <Button
+          type="button"
+          onClick={onBack}
+        >
+          Volver
+        </Button>
+        <Button
+          className="bg-redp hover:bg-redp w-40"
+          type="submit"
+          onClick={onSubmit}
+        >
+          Guardar
+        </Button>
+      </div>
     </div>
   );
 };

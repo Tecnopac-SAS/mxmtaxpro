@@ -29,7 +29,7 @@ const FileUploadSection = () => {
           </li>
         ))}
       </ul>
-      <div className="mt-4">
+      <form className="mt-4">
         <Input
           type="file"
           id="file-upload"
@@ -44,7 +44,7 @@ const FileUploadSection = () => {
           type="file"
           className="cursor-pointer text-blue-500"
         />
-      </div>
+      </form>
     </div>
   );
 };

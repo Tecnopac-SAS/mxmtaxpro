@@ -10,7 +10,7 @@ const badgeVariants = cva(
       variant: {
         revision:
           "border-transparent bg-[#D1D3FF] text-[#3D4BC5] shadow hover:bg-[#3D4BC5]/80",
-        aprovado:
+        aprobado:
           "border-transparent bg-[#DAFFD1] text-[#469839] hover:bg-[#469839]/80",
         corregir:
           "border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
