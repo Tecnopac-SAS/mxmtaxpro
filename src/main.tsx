@@ -20,6 +20,14 @@ import { Address } from "./components/FormSteps/Address.tsx";
 import { Contact } from "./components/FormSteps/Contact.tsx";
 import { Dependents } from "./components/FormSteps/Dependents.tsx";
 import Question1 from "./components/FormSteps/Question1.tsx";
+import Question2 from "./components/FormSteps/Question2.tsx";
+import Question3 from "./components/FormSteps/Question3.tsx";
+import Question4 from "./components/FormSteps/Question4.tsx";
+import Question5 from "./components/FormSteps/Question5.tsx";
+import Question6 from "./components/FormSteps/Question6.tsx";
+import Question7 from "./components/FormSteps/Question7.tsx";
+import Question8 from "./components/FormSteps/Question8.tsx";
+import SignType from "./components/FormSteps/SignType.tsx";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +82,14 @@ const router = createBrowserRouter([
       { path: "contact", element: <Contact /> },
       { path: "dependents", element: <Dependents /> },
       { path: "question1", element: <Question1 /> },
+      { path: "question2", element: <Question2 /> },
+      { path: "question3", element: <Question3 /> },
+      { path: "question4", element: <Question4 /> },
+      { path: "question5", element: <Question5 /> },
+      { path: "question6", element: <Question6 /> },
+      { path: "question7", element: <Question7 /> },
+      { path: "question8", element: <Question8 /> },
+      { path: "sign-type", element: <SignType /> },
 
       { path: "review", element: <Review /> },
     ],

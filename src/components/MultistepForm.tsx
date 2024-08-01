@@ -23,6 +23,18 @@ const MultistepForm: React.FC = () => {
         return 60;
       case "/multistep-form/question1":
         return 10;
+      case "/multistep-form/question2":
+        return 20;
+      case "/multistep-form/question3":
+        return 30;
+      case "/multistep-form/question4":
+        return 40;
+      case "/multistep-form/question5":
+        return 50;
+      case "/multistep-form/question6":
+        return 60;
+      case "/multistep-form/question7":
+        return 70;
       case "/multistep-form/review":
         return 100;
       default:
@@ -48,7 +60,7 @@ const MultistepForm: React.FC = () => {
         </a>
         <Progress
           value={getProgressValue()}
-          className="max-w-[20%]  m-auto "
+          className="max-w-[30%]  m-auto "
         />
       </div>
       <FormProvider>

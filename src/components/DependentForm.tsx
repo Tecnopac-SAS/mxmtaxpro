@@ -1,11 +1,10 @@
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 import { useFormContext } from "../context/FormContext";
 import { DialogClose } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
+import { Input } from "./ui/input";
 interface DependentData {
   dependentFullName: string;
   dependentBirthday: string;
@@ -87,7 +86,34 @@ function DependentForm() {
         </div>
         <div className="grid w-full max-w-sm items-center gap-1.5">
           <Label htmlFor="childCare">Cuidado y Gasto de los niños </Label>
-          <RadioGroup
+          <fieldset
+            id="childCare"
+            {...register("childCare")}
+          >
+            <label htmlFor="yes">Si</label>
+            <input
+              id="yes"
+              type="radio"
+              value="yes"
+              name="childCare"
+            />
+            <div className="">
+              <Label htmlFor="supportDocument">Anexe documento soporte</Label>
+              <Input
+                type="file"
+                {...register("supportDocument")}
+              />
+            </div>
+            <label htmlFor="no">No</label>
+            <input
+              id="no"
+              type="radio"
+              value="no"
+              name="childCare"
+            />
+          </fieldset>
+
+          {/* <RadioGroup
             defaultValue="option-one"
             id="childCare"
             {...register("childCare")}
@@ -113,7 +139,7 @@ function DependentForm() {
               />
               <Label htmlFor="option-two">No</Label>
             </div>
-          </RadioGroup>
+          </RadioGroup> */}
         </div>
       </div>
       <div className="flex justify-center gap-8 border-t border-black pt-4">

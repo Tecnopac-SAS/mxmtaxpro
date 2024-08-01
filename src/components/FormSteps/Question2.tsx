@@ -2,33 +2,32 @@ import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
 import { useFormContext } from "../../context/FormContext";
 import Buttons from "../Buttons";
-import { Input } from "../ui/input";
 import { useNavigate } from "react-router-dom";
-interface QuestionOneData {
-  question1: string;
-  documents: string;
+interface QuestionTwoData {
+  question2: string;
 }
-function Question1() {
-  const { register, handleSubmit } = useForm<QuestionOneData>();
+function Question2() {
+  const { register, handleSubmit } = useForm<QuestionTwoData>();
   const { updateFormData } = useFormContext();
   const navigate = useNavigate();
-
-  const onSubmit = (data: QuestionOneData) => {
+  const onSubmit = (data: QuestionTwoData) => {
     updateFormData(data);
-    navigate("/multistep-form/question2");
+    navigate("/multistep-form/question3");
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h2 className="border-b border-black">Pregunta 1</h2>
+      <h2 className="border-b border-black">Pregunta 2</h2>
       <div className="max-w-[869px] m-auto pb-28 px-20  my-10 border rounded-md ">
         <div className="py-4">
           <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="question1">
-              ¿Usted o su conyuge tienen negocio propio?
+            <Label htmlFor="question2">
+              ¿Usted o su conyuge puede ser declarado dependiente de otro
+              contribuyente?
             </Label>
             <fieldset
+              required
               id="question1"
-              {...register("question1")}
+              {...register("question2")}
               className="flex gap-2"
             >
               <label htmlFor="yes">Si</label>
@@ -36,7 +35,7 @@ function Question1() {
                 id="yes"
                 type="radio"
                 value="yes"
-                name="question1"
+                name="question2"
               />
               <label htmlFor="no">No</label>
               <input
@@ -44,24 +43,14 @@ function Question1() {
                 type="radio"
                 value="no"
                 checked
-                name="question1"
+                name="question2"
               />
             </fieldset>
           </div>
-          <div className="py-2">
-            <Label htmlFor="supportDocument">
-              Anexe forma 1099 y relación de ingresos y gastos
-            </Label>
-            <Input
-              type="file"
-              multiple
-              {...register("documents")}
-            />
-          </div>
         </div>
-        <Buttons />
       </div>
+      <Buttons />
     </form>
   );
 }
-export default Question1;
+export default Question2;
