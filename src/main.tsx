@@ -28,6 +28,8 @@ import Question6 from "./components/FormSteps/Question6.tsx";
 import Question7 from "./components/FormSteps/Question7.tsx";
 import Question8 from "./components/FormSteps/Question8.tsx";
 import SignType from "./components/FormSteps/SignType.tsx";
+import UploadSign from "./components/FormSteps/UploadSign.tsx";
+import Sign from "./components/FormSteps/Sign.tsx";
 
 const router = createBrowserRouter([
   {
@@ -90,7 +92,8 @@ const router = createBrowserRouter([
       { path: "question7", element: <Question7 /> },
       { path: "question8", element: <Question8 /> },
       { path: "sign-type", element: <SignType /> },
-
+      { path: "upload-sign", element: <UploadSign /> },
+      { path: "sign", element: <Sign /> },
       { path: "review", element: <Review /> },
     ],
   },

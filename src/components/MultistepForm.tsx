@@ -35,6 +35,8 @@ const MultistepForm: React.FC = () => {
         return 60;
       case "/multistep-form/question7":
         return 70;
+      case "/multistep-form/sign-type":
+        return 100;
       case "/multistep-form/review":
         return 100;
       default:
