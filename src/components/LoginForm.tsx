@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
+
 import axios from "axios";
 
 type FormValues = {
@@ -28,12 +29,16 @@ export default function LoginForm() {
     console.log(data);
 
     try {
-      const response = await axios.post("/api/login", data);
+      const response = await axios.post(
+        `${process.env.API_URL}/auth/login`,
+        data
+      );
       console.log(response.data);
       // handle successful login
     } catch (error) {
       console.error("Login error", error);
       // handle login error
+      console.log(error);
     }
   };
 

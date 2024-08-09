@@ -112,34 +112,6 @@ function DependentForm() {
               name="childCare"
             />
           </fieldset>
-
-          {/* <RadioGroup
-            defaultValue="option-one"
-            id="childCare"
-            {...register("childCare")}
-          >
-            <div className=" space-x-2">
-              <RadioGroupItem
-                value="yes"
-                id="option-one"
-              />
-              <Label htmlFor="option-one">Si</Label>
-              <div className="">
-                <Label htmlFor="supportDocument">Anexe documento soporte</Label>
-                <Input
-                  type="file"
-                  {...register("supportDocument")}
-                />
-              </div>
-            </div>
-            <div className="flex items-center space-x-2">
-              <RadioGroupItem
-                value="no"
-                id="option-two"
-              />
-              <Label htmlFor="option-two">No</Label>
-            </div>
-          </RadioGroup> */}
         </div>
       </div>
       <div className="flex justify-center gap-8 border-t border-black pt-4">

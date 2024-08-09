@@ -30,6 +30,8 @@ import Question8 from "./components/FormSteps/Question8.tsx";
 import SignType from "./components/FormSteps/SignType.tsx";
 import UploadSign from "./components/FormSteps/UploadSign.tsx";
 import Sign from "./components/FormSteps/Sign.tsx";
+import AdminLayout from "./layouts/AdminLayout.tsx";
+import ClientsPage from "./pages/ClientsPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -95,6 +97,21 @@ const router = createBrowserRouter([
       { path: "upload-sign", element: <UploadSign /> },
       { path: "sign", element: <Sign /> },
       { path: "review", element: <Review /> },
+    ],
+  },
+  // New multistep form routes
+  {
+    path: "/Admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "clients",
+        element: <ClientsPage />,
+      },
+      {
+        path: "account",
+        element: <AccountPage />,
+      },
     ],
   },
 ]);

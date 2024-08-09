@@ -40,7 +40,7 @@ function Sign() {
         <div className="border-gray-400 rounded-md border max-w-80 md:max-w-[400px]">
           <SignatureCanvas
             ref={signatureRef}
-            penColor="black"
+            penColor="red"
             canvasProps={{
               width: 400,
               height: 200,
