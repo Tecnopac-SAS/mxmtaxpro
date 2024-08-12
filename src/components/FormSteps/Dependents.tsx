@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Dependents: React.FC = () => {
   const onSubmit = () => {
-    navigate("/multistep-form/review");
+    navigate("/multistep-form/question1");
   };
   const navigate = useNavigate();
   const onBack = () => {

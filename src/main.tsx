@@ -99,14 +99,17 @@ const router = createBrowserRouter([
       { path: "review", element: <Review /> },
     ],
   },
-  // New multistep form routes
   {
-    path: "/Admin",
+    path: "/admin",
     element: <AdminLayout />,
     children: [
       {
         path: "clients",
         element: <ClientsPage />,
+      },
+      {
+        path: "query-client-year",
+        element: "hi",
       },
       {
         path: "account",
