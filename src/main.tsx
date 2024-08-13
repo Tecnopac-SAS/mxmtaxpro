@@ -32,6 +32,9 @@ import UploadSign from "./components/FormSteps/UploadSign.tsx";
 import Sign from "./components/FormSteps/Sign.tsx";
 import AdminLayout from "./layouts/AdminLayout.tsx";
 import ClientsPage from "./pages/ClientsPage.tsx";
+import ClientYear from "./pages/ClientYear.tsx";
+import ClientDetailLayout from "./layouts/ClientDetailLayout.tsx";
+import YearDataAdmin from "./pages/YearDataAdmin.tsx";
 
 const router = createBrowserRouter([
   {
@@ -74,7 +77,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // New multistep form routes
   {
     path: "multistep-form",
     element: <MultistepForm />,
@@ -100,7 +102,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/admin",
+    path: "admin",
     element: <AdminLayout />,
     children: [
       {
@@ -108,12 +110,18 @@ const router = createBrowserRouter([
         element: <ClientsPage />,
       },
       {
-        path: "query-client-year",
-        element: "hi",
-      },
-      {
-        path: "account",
-        element: <AccountPage />,
+        path: "detail",
+        element: <ClientDetailLayout />,
+        children: [
+          {
+            path: "client-year",
+            element: <ClientYear />,
+          },
+          {
+            path: "client-year-data",
+            element: <YearDataAdmin />,
+          },
+        ],
       },
     ],
   },

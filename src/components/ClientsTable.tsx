@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import {
   ColumnDef,
@@ -35,14 +34,14 @@ const data = [
   {
     name: "Grace",
     lastName: "Nelson",
-    state: "approved",
+    state: "aprovado",
     socialDigits: "468-85-4040",
     registerDate: "09-06-1998",
   },
   {
     name: "Jerry",
     lastName: "Obrien",
-    state: "pending",
+    state: "corregir",
     socialDigits: "100-76-1955",
     registerDate: "03-12-2004",
   },
@@ -70,14 +69,14 @@ const data = [
   {
     name: "Lisa",
     lastName: "Buchanan",
-    state: "pending",
+    state: "corregir",
     socialDigits: "306-28-8290",
     registerDate: "09-08-2008",
   },
   {
     name: "Deborah",
     lastName: "Fischer",
-    state: "pending",
+    state: "corregir",
     socialDigits: "545-95-1813",
     registerDate: "24-12-1986",
   },
@@ -91,14 +90,14 @@ const data = [
   {
     name: "Michael",
     lastName: "Orr",
-    state: "approved",
+    state: "aprovado",
     socialDigits: "527-80-8019",
     registerDate: "02-06-2016",
   },
   {
     name: "Jonathan",
     lastName: "Garcia",
-    state: "pending",
+    state: "corregir",
     socialDigits: "546-08-7019",
     registerDate: "22-12-1971",
   },
@@ -119,14 +118,14 @@ const data = [
   {
     name: "Sara",
     lastName: "Ramirez",
-    state: "approved",
+    state: "aprovado",
     socialDigits: "019-74-9530",
     registerDate: "28-06-2022",
   },
   {
     name: "Tim",
     lastName: "Williams",
-    state: "pending",
+    state: "corregir",
     socialDigits: "030-58-0887",
     registerDate: "19-08-1980",
   },
@@ -140,14 +139,14 @@ const data = [
   {
     name: "Katherine",
     lastName: "Roberts",
-    state: "pending",
+    state: "corregir",
     socialDigits: "117-61-9460",
     registerDate: "14-12-2020",
   },
   {
     name: "Michael",
     lastName: "David",
-    state: "pending",
+    state: "corregir",
     socialDigits: "386-19-5381",
     registerDate: "08-07-1983",
   },
@@ -161,14 +160,14 @@ const data = [
   {
     name: "Jared",
     lastName: "Johnson",
-    state: "pending",
+    state: "corregir",
     socialDigits: "695-81-9662",
     registerDate: "03-06-1989",
   },
   {
     name: "Rodney",
     lastName: "Livingston",
-    state: "pending",
+    state: "corregir",
     socialDigits: "628-92-7520",
     registerDate: "14-11-2010",
   },
@@ -187,7 +186,7 @@ export const columns: ColumnDef[] = [
     accessorKey: "state",
     header: "Estado del tramite",
     cell: ({ row }) => (
-      <Badge variant={row.original.estado}>{row.original.estado}</Badge>
+      <Badge variant={row.original.state}>{row.original.state}</Badge>
     ),
   },
   {
@@ -195,7 +194,7 @@ export const columns: ColumnDef[] = [
     header: "Digítos Social",
   },
   {
-    accessorKey: "Fecha de registro",
+    accessorKey: "registerDate",
     header: "Fecha de registro",
   },
 
@@ -203,8 +202,8 @@ export const columns: ColumnDef[] = [
     id: "acciones",
     header: "Acción",
     cell: () => (
-      <>
-        <a href="/multistep-form/">
+      <div className="flex gap-2">
+        <a href="detail/client-year">
           <Button
             variant="outline"
             size="sm"
@@ -218,7 +217,7 @@ export const columns: ColumnDef[] = [
         >
           Descargar
         </Button>
-      </>
+      </div>
     ),
   },
 ];
@@ -243,12 +242,14 @@ export function ClientsTable() {
 
   return (
     <div className="w-full">
-      <h2 className="border-b-black border font-semibold w-11/12">Clientes</h2>
+      <h2 className="border-b-black border font-bold w-full">Clientes</h2>
       <div className="flex items-center py-4 w-11/12">
-        <Input
-          value={filtering}
-          onChange={(e) => setFiltering(e.target.value)}
-        ></Input>
+        <div className="w-[450px] m-auto">
+          <Input
+            value={filtering}
+            onChange={(e) => setFiltering(e.target.value)}
+          />
+        </div>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
